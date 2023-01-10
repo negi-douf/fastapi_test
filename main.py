@@ -22,3 +22,9 @@ def read_items() -> list[Item]:
         Item(id=2, name="milk"),
     ]
     return items
+
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int) -> Item:
+    item = Item(id=item_id, name="cheese")
+    return item
